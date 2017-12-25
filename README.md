@@ -1,7 +1,5 @@
 # Documentation
 
-<img src="/logo/iron.png" width="150" alt="iron logo">
-
 ## Building the source
 
 For prerequisites and detailed build instructions please stick to the official Go-Ethereum
