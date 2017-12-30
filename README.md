@@ -2,7 +2,7 @@
 
 ## Building the source
 
-In order to interact with the blockchain using the iron Dapp you need to set an iron node.<br>You can learn how to build it from source code [here](https://github.com/iron-bank/Documentation/blob/master/Building.md)! 🚀
+In order to interact with the blockchain using the iron Dapp you need to set an iron node (go-IRON).<br>You can learn how to build it from source code [here](https://github.com/iron-bank/Documentation/blob/master/Building.md)! 🚀
 
 
 ## Contribution
