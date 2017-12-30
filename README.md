@@ -1,4 +1,6 @@
-# Documentation
+<img src="https://github.com/iron-bank/go-IRON/blob/master/logo/iron.png" width="150" alt="iron logo">
+
+# Documentation (iron Bank Network)
 
 ## Building the source
 
