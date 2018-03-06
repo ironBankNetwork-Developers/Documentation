@@ -21,35 +21,9 @@ In case this doesn't work, just copy and paste the entire path to the iron insta
 
     sudo cp <entire-path-to-iron-instance-in-your-system> /usr/local/bin
 
-## Running iron
+## Running an iron node
 
-First, you need to sync and connect to the main blockchain via `--bootnodes` to interact with the Iron Bank Network. Regarding functionality, going through all the possible command line flags is out of scope here (please consult the compatible Go-Ethereum
-[CLI Wiki page](https://github.com/ethereum/go-ethereum/wiki/Command-Line-Options)), but we've
-enumerated a few common parameter combos to get you up to speed quickly on how you can run your
-own iron instance.
-
-### Sync Iron Bank Network
-
-As a single node you are not yet part of the iron Bank Network. You need to sync with the rest of the blockchain to use its functionalities and interact with other peers while using the Dapp. In order to do that, just run the following command:
-
-```
-$ iron --bootnodes enode://3fe6b310f828d4b0273f62588dd77ddb0e9022a0381fcb651bf3a5ec0bb9e3ae2faeec1cd2c0971b873d47ed4f50fa4cb97f962d4054a324edd57f7cc6c856ce@[192.168.1.33]:30303
-```
-
-This is just one of the official iron nodes that the team provides. You may just use one of these or connect to a peer you know beforehand. Just need an `enode` to sync and connect to the blockchain via the `--bootnodes` flag, following this structure:
-
-```
-$ iron --bootnodes <bootnode-enode-parameters>
-```
-
-#### Official iron enode list:
-```
-enode://3fe6b310f828d4b0273f62588dd77ddb0e9022a0381fcb651bf3a5ec0bb9e3ae2faeec1cd2c0971b873d47ed4f50fa4cb97f962d4054a324edd57f7cc6c856ce@[192.168.1.33]:30303
-```
-
-### Full node on the main Iron Bank Network
-
-By far the most common scenario is people wanting to simply interact with the Iron Bank Network:
+By far the most common scenario is people wanting to simply interact with the Iron Bank Network Dapp:
 create accounts; transfer funds; deploy and interact with contracts. For this particular use-case
 the user doesn't care about years-old historical data, so we can fast-sync quickly to the current
 state of the network. To do so:
@@ -99,6 +73,29 @@ If a red error box appears while you try to interact with the blockchain saying 
 This will allow you to interact with the blockchain for a few minutes. This is a safety measure to avoid others stealing your funds. Alternatively, you can run the command `--unlock <your-account-address>` while starting your node to unlock your accounts instantly. e.g:
 ```
 $ iron --fast --cache=1024 --unlock <your-account-address> console
+```
+
+#### Start mining locally to test your contracts
+
+In order to test functionalities while using the Dapp, you need to mine locally to execute transactions. It's as simple as type the following command in the JavaScript console:
+
+```
+> miner.start()
+```
+
+Then, you can stop mining (saving CPU usage if your computer get slower) using the next command:
+
+```
+> miner.stop()
+```
+
+
+### Sync Iron Bank Network (only private networks for testing)
+
+During the development stage you are able to set private networks to test the functionality of the contracts. Thus, you need to sync and connect to your local peers via `--bootnodes` to interact with the Iron Bank Network while using the Dapp. Just need an `enode` to sync and connect to the blockchain via the `--bootnodes` flag, following this structure:
+
+```
+$ iron --bootnodes <bootnode-enode-parameters>
 ```
 
 ## Executables
@@ -180,24 +177,6 @@ on all transports. You can reuse the same connection for multiple requests!
 doing so! Hackers on the internet are actively trying to subvert iron nodes with exposed APIs!
 Further, all browser tabs can access locally running webservers, so malicious webpages could try to
 subvert locally available APIs!**
-
-#### Creating the rendezvous point
-
-With all nodes that you want to run initialized to the desired genesis state, you'll need to start a
-bootstrap node that others can use to find each other in your network and/or over the internet. The
-clean way is to configure and run a dedicated bootnode:
-
-```
-$ bootnode --genkey=boot.key
-$ bootnode --nodekey=boot.key
-```
-
-With the bootnode online, it will display an [`enode` URL](https://github.com/ethereum/wiki/wiki/enode-url-format)
-that other nodes can use to connect to it and exchange peer information. Make sure to replace the
-displayed IP address information (most probably `[::]`) with your externally accessible IP to get the
-actual `enode` URL.
-
-*Note: You could also use a full fledged iron node as a bootnode, but it's the less recommended way.*
 
 #### Running a private miner
 
