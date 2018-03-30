@@ -9,7 +9,7 @@ Building iron requires both a Go (version 1.7 or later) and a C compiler. So you
 You can install them using your favourite package manager (`brew` is a good option for MacOS).
 Once the dependencies are installed, run
 
-    git clone https://github.com/iron-bank/go-IRON.git
+    git clone https://github.com/ironBankNetwork-Developers/go-IRON.git
     cd go-IRON
     make geth
         
