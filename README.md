@@ -1,10 +1,10 @@
-<img src="https://github.com/iron-bank/go-IRON/blob/master/logo/iron.png" width="150" alt="iron logo">
+<img src="https://github.com/ironBankNetwork-Developers/go-IRON/blob/master/logo/iron.png" width="150" alt="iron logo">
 
 # Documentation (iron Bank Network)
 
 ## Building the source
 
-In order to interact with the blockchain using the iron Dapp you need to set an iron node (go-IRON).<br>You can learn how to build it from source code [here](https://github.com/iron-bank/Documentation/blob/master/Building.md)! 🚀
+In order to interact with the blockchain using the iron Dapp you need to set an iron node (go-IRON).<br>You can learn how to build it from source code [here](https://github.com/ironBankNetwork-Developers/Documentation/blob/master/Building.md)! 🚀
 
 
 ## Contribution
